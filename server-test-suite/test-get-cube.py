@@ -1,8 +1,15 @@
-from icecream import ic
-from requests import Session
+from json import dumps
 
 from consts import API_BASE_URL
-from models import CubeRequest, OlapField, OlapType
+from icecream import ic
+from models import (
+    CubeRequest,
+    OlapField,
+    OlapFieldDefinition,
+    OlapMetricPlacement,
+    OlapType,
+)
+from requests import Session
 
 fields = [
     OlapField(
@@ -58,8 +65,8 @@ fields = [
         id=20,
         ordinal=7,
         name="Численность детей",
-        description="Количество детей в возрасте до 18 лет в населенном пункте, "
-        "человек",
+        description="Количество детей в возрасте до 18 лет в населенном "
+        "пункте, человек",
         type=OlapType.INTEGER,
         visible=True,
     ),
@@ -114,12 +121,20 @@ fields = [
 ]
 
 with Session() as session:
-    request: CubeRequest = CubeRequest()
+    request: CubeRequest = CubeRequest(metricPlacement=OlapMetricPlacement.ROWS)
+    request.rowFields = [
+        OlapFieldDefinition(fieldId=fields[0].id),
+        OlapFieldDefinition(fieldId=fields[1].id),
+        OlapFieldDefinition(fieldId=fields[2].id),
+        OlapFieldDefinition(fieldId=fields[3].id),
+    ]
+    data = request.model_dump_json(by_alias=True)
+    ic(data)
     result = session.post(
         f"{API_BASE_URL}/olap/get-cube",
         headers={
             "Content-Type": "application/json",
         },
-        data=request.model_dump(),
+        data=data,
     )
     ic(result.json())
