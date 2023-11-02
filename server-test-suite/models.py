@@ -1,25 +1,14 @@
-from enum import Enum
 from typing import Literal
 
+from olap.enums import (
+    OlapAggregationType,
+    OlapFieldType,
+    OlapMetricPlacement,
+    OlapOperationType,
+    OlapSortOrder,
+    OlapType,
+)
 from pydantic import BaseModel, Field
-
-
-class OlapType(Enum):
-    INTEGER = "INTEGER"
-    STRING = "STRING"
-    DOUBLE = "DOUBLE"
-    DATE = "DATE"
-    TIMESTAMP = "TIMESTAMP"
-
-
-class OlapMetricPlacement(Enum):
-    COLUMNS = "COLUMNS"
-    ROWS = "ROWS"
-
-
-class olapFieldType(Enum):
-    REPORT_FIELD = "REPORT_FIELD"
-    DERIVED_FIELD = "DERIVED_FIELD"
 
 
 class OlapField(BaseModel):
@@ -33,17 +22,12 @@ class OlapField(BaseModel):
 
 class OlapFieldDefinition(BaseModel):
     fieldId: int
-    fieldType: Literal["REPORT_FIELD"] = Field(olapFieldType.REPORT_FIELD)
+    fieldType: Literal["REPORT_FIELD"] = Field(OlapFieldType.REPORT_FIELD)
 
 
 class OlapInterval(BaseModel):
     From: int = Field(serialization_alias="from")
     count: int = Field()
-
-
-class OlapOperationType(Enum):
-    AND = "AND"
-    OR = "OR"
 
 
 class OlapFilterGroup(BaseModel):
@@ -61,21 +45,21 @@ class OlapMetricFilterGroup(OlapFilterGroup):
     allMetricIds: list[int] = Field(default_factory=list)
 
 
-class OlapSortOrder(Enum):
-    Ascending = "Ascending"
-    Descending = "Descending"
-
-
 class OlapSortingParams(BaseModel):
     order: OlapSortOrder = Field(default=OlapSortOrder.Ascending)
     Tuple: list[str] = Field(default_factory=list, serialization_alias="tuple")
     metricId: int = Field()
 
 
+class OlapMetricDefinition(BaseModel):
+    field: OlapFieldDefinition = Field()
+    aggregationType: OlapAggregationType = Field()
+
+
 class CubeRequest(BaseModel):
     columnFields: list[OlapFieldDefinition] = Field(default_factory=list)
     rowFields: list[OlapFieldDefinition] = Field(default_factory=list)
-    metrics: list = Field(default_factory=list)
+    metrics: list[OlapMetricDefinition] = Field(default_factory=list)
     metricPlacement: OlapMetricPlacement = Field()
     filterGroup: OlapFilterFilterGroup = Field(
         default_factory=OlapFilterFilterGroup

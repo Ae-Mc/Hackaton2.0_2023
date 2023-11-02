@@ -1,14 +1,14 @@
-from json import dumps
-
 from consts import API_BASE_URL
 from icecream import ic
 from models import (
     CubeRequest,
     OlapField,
     OlapFieldDefinition,
+    OlapMetricDefinition,
     OlapMetricPlacement,
     OlapType,
 )
+from olap.enums import OlapAggregationType
 from requests import Session
 
 fields = [
@@ -126,7 +126,15 @@ with Session() as session:
         OlapFieldDefinition(fieldId=fields[0].id),
         OlapFieldDefinition(fieldId=fields[1].id),
         OlapFieldDefinition(fieldId=fields[2].id),
+    ]
+    request.columnFields = [
         OlapFieldDefinition(fieldId=fields[3].id),
+    ]
+    request.metrics = [
+        OlapMetricDefinition(
+            field=OlapFieldDefinition(fieldId=26),
+            aggregationType=OlapAggregationType.COUNT,
+        )
     ]
     data = request.model_dump_json(by_alias=True)
     ic(data)
