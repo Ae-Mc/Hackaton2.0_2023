@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
-        "target": "ES6",
-        "module": "CommonJS",
+        "target": "ESNext",
+        "module": "System",
         "outDir": "script",
+        "outFile": "script/main.js",
         "removeComments": false,
         "sourceMap": false,
         "noImplicitAny": true,
@@ -12,7 +13,7 @@
         ],
         "lib": [
             "DOM",
-            "ES6"
+            "ESNext"
         ]
     },
 }

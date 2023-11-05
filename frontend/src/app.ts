@@ -4,6 +4,11 @@ function onloadHandler() {
         const header = headers[i] as HTMLElement
         header.style.backgroundColor = "#aae"
     }
+    const api = new Api()
+    console.log(api)
+    api.getFields().then((fields) => {
+        console.log(fields)
+    })
 }
 
 if (document.readyState === "complete") {
