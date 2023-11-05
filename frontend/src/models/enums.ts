@@ -40,3 +40,29 @@ enum OlapOperationType {
     OR = "OR",
 }
 
+
+enum OlapFilterType {
+    EMPTY = "EMPTY",
+    IN_LIST = "IN_LIST",
+    CONTAINS_CS = "CONTAINS_CS",
+    CONTAINS_CI = "CONTAINS_CI",
+    EQUALS = "EQUALS",
+    GREATER = "GREATER",
+    LESSER = "LESSER",
+    GREATER_OR_EQUALS = "GREATER_OR_EQUALS",
+    LESSER_OR_EQUALS = "LESSER_OR_EQUALS",
+    BETWEEN = "BETWEEN",
+    BLANK = "BLANK",
+}
+
+enum OlapMetricFilterType {
+    EMPTY = "EMPTY",
+    EQUALS = "EQUALS",
+    GREATER = "GREATER",
+    LESSER = "LESSER",
+    GREATER_OR_EQUALS = "GREATER_OR_EQUALS",
+    LESSER_OR_EQUALS = "LESSER_OR_EQUALS",
+    BETWEEN = "BETWEEN",
+    BLANK = "BLANK",
+
+}
