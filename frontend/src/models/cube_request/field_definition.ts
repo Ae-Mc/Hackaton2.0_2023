@@ -1,4 +1,6 @@
 class FieldDefinition {
-    fieldId: bigint
-    fieldType: OlapFieldType = OlapFieldType.REPORT_FIELD
+    constructor(
+        public fieldId: bigint,
+        public fieldType: OlapFieldType = OlapFieldType.REPORT_FIELD,
+    ) { }
 }
