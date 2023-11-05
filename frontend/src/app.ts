@@ -1,5 +1,5 @@
 function onloadHandler() {
-    let headers = document.getElementsByTagName('thead')
+    let headers = $('thead')
     for (let i = 0; i < headers.length; i++) {
         const header = headers[i] as HTMLElement
         header.style.backgroundColor = "#aae"
@@ -11,3 +11,4 @@ if (document.readyState === "complete") {
 } else {
     window.onload = onloadHandler
 }
+

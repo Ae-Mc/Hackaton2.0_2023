@@ -1,9 +1,18 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
+        "target": "ES6",
+        "module": "CommonJS",
         "outDir": "script",
         "removeComments": false,
-        "sourceMap": true,
-        "noEmitOnError": false
-    }
+        "sourceMap": false,
+        "noImplicitAny": true,
+        "noEmitOnError": false,
+        "types": [
+            "jquery"
+        ],
+        "lib": [
+            "DOM",
+            "ES6"
+        ]
+    },
 }
