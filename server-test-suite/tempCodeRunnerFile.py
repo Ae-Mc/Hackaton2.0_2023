@@ -1,2 +1,0 @@
-
-with Session() as session:

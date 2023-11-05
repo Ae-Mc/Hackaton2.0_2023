@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "outDir": "script",
+        "removeComments": false,
+        "sourceMap": true,
+        "noEmitOnError": false
+    }
+}

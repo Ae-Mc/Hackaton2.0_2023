@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Адаптивная таблица с изменяемыми размерами</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
@@ -8,13 +9,16 @@
             width: 100%;
             border-collapse: collapse;
         }
-        
-        th, td {
+
+        th,
+        td {
             border: 1px solid #ccc;
             padding: 8px;
         }
     </style>
+    <script src="script/app.js" lang="javascript"></script>
 </head>
+
 <body>
     <table id="myTable">
         <thead>
@@ -46,13 +50,14 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
-        $(function() {
+        $(function () {
             $("#myTable th, #myTable td").resizable({
                 handles: "e, s",
                 minWidth: 30,
                 minHeight: 20
-            });
+            })
         });
     </script>
 </body>
+
 </html>
