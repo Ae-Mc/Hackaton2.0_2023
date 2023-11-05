@@ -44,8 +44,8 @@ enum OlapOperationType {
 enum OlapFilterType {
     EMPTY = "EMPTY",
     IN_LIST = "IN_LIST",
-    CONTAINS_CS = "CONTAINS_CS",
-    CONTAINS_CI = "CONTAINS_CI",
+    CONTAINS_CS = "CONTAINS_CS", // CONTAINS_CASE_SESITIVE
+    CONTAINS_CI = "CONTAINS_CI", // CONTAINS_CASE_INSESITIVE
     EQUALS = "EQUALS",
     GREATER = "GREATER",
     LESSER = "LESSER",
@@ -64,5 +64,4 @@ enum OlapMetricFilterType {
     LESSER_OR_EQUALS = "LESSER_OR_EQUALS",
     BETWEEN = "BETWEEN",
     BLANK = "BLANK",
-
 }

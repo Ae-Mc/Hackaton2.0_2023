@@ -1,4 +1,3 @@
-
 class Api {
     private static readonly baseUrl: string = "http://localhost:8080/api/v1"
     private static readonly baseSettings: JQueryAjaxSettings = {
