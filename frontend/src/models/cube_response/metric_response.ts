@@ -1,7 +1,8 @@
 class MetricResponse {
-    fieldId: bigint
-    aggregationType: OlapAggregationType
-    metricValues: Array<MetricResponse>
-    values: Array<Array<string>>
-    dataType: OlapType
+    constructor(
+        public fieldId: number,
+        public aggregationType: OlapAggregationType,
+        public values: Array<Array<string>>,
+        public dataType: OlapType,
+    ) { }
 }

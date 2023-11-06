@@ -1,6 +1,6 @@
 class Interval {
     constructor(
-        public from: bigint,
-        public count: bigint,
+        public from: number,
+        public count: number,
     ) { }
 }

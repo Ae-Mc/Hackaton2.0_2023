@@ -1,5 +1,7 @@
 class BaseGroup {
-    operationType: OlapOperationType = OlapOperationType.AND
-    invertResult: boolean = false
-    childGroups: Array<any> = []
+    constructor(
+        public operationType: OlapOperationType = OlapOperationType.AND,
+        public invertResult: boolean = false,
+        public childGroups: Array<any> = [],
+    ) { }
 }

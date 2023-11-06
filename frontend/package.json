@@ -1,8 +1,10 @@
 {
   "dependencies": {
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "slickgrid": "^5.4.2"
   },
   "devDependencies": {
-    "@types/jquery": "^3.5.25"
+    "@types/jquery": "^3.5.25",
+    "@types/slickgrid": "^2.1.38"
   }
 }

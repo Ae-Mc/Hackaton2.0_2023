@@ -1,5 +1,7 @@
 class MetadataResponse {
-    id: bigint
-    totalRows: bigint
-    fields: Array<Field>
+    constructor(
+        public id: number,
+        public totalRows: number,
+        public fields: Array<Field>,
+    ) { }
 }
