@@ -41,15 +41,13 @@ class DragAndDropMetrics {
         if (this.type == TypeEnum.AGGR) {
             let targetDrag = $("#" + this.divId)[0];
             target.appendChild(targetDrag);
-            let metric: MetricDefinition = new MetricDefinition();
-            metric.aggregationType = OlapAggregationType[targetDrag.getAttribute("type") as keyof typeof OlapAggregationType];
-            metric.field = new FieldDefinition();
-            metric.field.fieldType = OlapFieldType[target.getAttribute("type") as keyof typeof  OlapFieldType];
-            metric.field.fieldId = BigInt(target.getAttribute("fieldId"));
-            if (target.parentElement.className == DragZoneID.TOP){
+            let metric: MetricDefinition = new MetricDefinition(
+                new FieldDefinition(parseInt(target.getAttribute("fieldId")), OlapFieldType[target.getAttribute("type") as keyof typeof OlapFieldType]),
+                OlapAggregationType[targetDrag.getAttribute("type") as keyof typeof OlapAggregationType]);
+            if (target.parentElement.className == DragZoneID.TOP) {
                 this._columnMetrics.push(metric);
             }
-            else{
+            else {
                 this._rowMetrics.push(metric);
             }
         }
@@ -60,15 +58,14 @@ class DragAndDropMetrics {
         if (this.type == TypeEnum.COLUMN) {
             let targetDrag = $("#" + this.divId)[0];
             target.appendChild(targetDrag);
-            let metric: MetricDefinition = new MetricDefinition();
-            metric.aggregationType = OlapAggregationType[targetDrag.getAttribute("type") as keyof typeof OlapAggregationType];
-            metric.field = new FieldDefinition();
-            metric.field.fieldType = OlapFieldType[target.getAttribute("type") as keyof typeof  OlapFieldType];
-            metric.field.fieldId = BigInt(target.getAttribute("fieldId"));
-            if (target.parentElement.className == DragZoneID.TOP){
+            let metric: MetricDefinition = new MetricDefinition(
+                new FieldDefinition(parseInt(target.getAttribute("fieldId"))),
+                OlapAggregationType[targetDrag.getAttribute("type") as keyof typeof OlapAggregationType]
+            );
+            if (target.parentElement.className == DragZoneID.TOP) {
                 this._columnMetrics.push(metric);
             }
-            else{
+            else {
                 this._rowMetrics.push(metric);
             }
         }

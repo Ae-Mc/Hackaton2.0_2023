@@ -81,13 +81,15 @@ class TablePresenter {
             row.append($(`<td class="fieldHeader">${this.fields.get(this.request.rowFields[j].fieldId).name}</td>`))
         }
 
-        const metrics = this.request.metrics.map((value, _, __) => this._metricToText(value))
-        for (let i = this._startColumnIndex; i < this.maxX; i++) {
-            for (let k = 0; k < this.request.metrics.length; k++) {
-                row.append($(`<td class="metricHeader">${metrics[k]}</td>`))
+        if (this.request.rowFields.length != 0) {
+            const metrics = this.request.metrics.map((value, _, __) => this._metricToText(value))
+            for (let i = this._startColumnIndex; i < this.maxX; i++) {
+                for (let k = 0; k < this.request.metrics.length; k++) {
+                    row.append($(`<td class="metricHeader">${metrics[k]}</td>`))
+                }
             }
+            this.table.append(...row)
         }
-        this.table.append(...row)
     }
 
     buildTable(): void {
@@ -108,12 +110,12 @@ class TablePresenter {
     private _metricToText(metric: MetricDefinition): string {
         const aggregationStr = TablePresenter.aggregationTypeToText.get(metric.aggregationType)
         const fieldName = this.fields.get(metric.field.fieldId).name
+
         return `${aggregationStr} «${fieldName}»`
     }
 
     construct() {
         this.table.innerHTML = ""
-        console.log(this._startColumnIndex, this.width, this.maxX, this.maxY)
         this.buildColumnHeaders()
         this.buildTable()
     }
