@@ -11,7 +11,7 @@ class TablePresenter {
     private _startRowIndex: number = 0
     private _startColumnIndex: number = 0
     private _width: number = 10
-    private _height: number = 10
+    private _height: number = 15
 
 
     public get startRowIndex(): number {

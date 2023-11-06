@@ -9,8 +9,7 @@
         "noImplicitAny": true,
         "noEmitOnError": false,
         "types": [
-            "jquery",
-            "toolcool-range-slider"
+            "jquery"
         ],
         "lib": [
             "DOM",
