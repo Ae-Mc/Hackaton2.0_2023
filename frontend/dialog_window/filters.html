@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <table>
+    <div>
+      <input type="radio" id="EMPTY" name="metrics" value=false onchange="callback(this)" />
+      <label for="EMPTY">Пустой</label>
+    </div>
+
+    <div>
+      <input type="radio" id="IN_LIST" name="metrics" value=false onchange="callback(this)" />
+      <label for="IN_LIST">По списку</label>
+    </div>
+
+    <div>
+      <input type="radio" id="IN_LIST" name="metrics" value=false onchange="callback(this)" />
+      <label for="IN_LIST">По подстроке</label>
+    </div>
+
+    <div>
+      <input type="radio" id="IN_LIST" name="metrics" value=false onchange="callback(this)" />
+      <label for="IN_LIST">По подстроке чувствительный регистр</label>
+    </div>
+
+    <div>
+      <input type="radio" id="EQUALS" name="metrics" value=false onchange="callback(this)" />
+      <label for="EQUALS">Равно</label>
+    </div>
+
+    <div>
+      <input type="radio" id="GREATER" name="metrics" value=false onchange="callback(this)" />
+      <label for="GREATER">Больше</label>
+    </div>
+
+    <div>
+      <input type="radio" id="LESSER" name="metrics" value=false onchange="callback(this)" />
+      <label for="LESSER">Меньше</label>
+    </div>
+
+    <div>
+      <input type="radio" id="GREATER_OR_EQUALS" name="metrics" value=false onchange="callback(this)" />
+      <label for="GREATER_OR_EQUALS">Больше или равно</label>
+    </div>
+
+    <div>
+      <input type="radio" id="LESSER_OR_EQUALS" name="metrics" value=false onchange="callback(this)" />
+      <label for="LESSER_OR_EQUALS">Меньше или равно</label>
+    </div>
+
+    <div>
+      <input type="radio" id="BETWEEN" name="metrics" value=false onchange="callback(this)" />
+      <label for="BETWEEN">Между</label>
+    </div>
+
+    <div>
+      <input type="radio" id="BLANK" name="metrics" value=false onchange="callback(this)" />
+      <label for="BLANK">Нет значения</label>
+    </div>
+  </table>
+  <script>
+    function callback(element) {
+      console.log("element:" + element.id)
+    };
+  </script>
+</body>
+
+</html>
