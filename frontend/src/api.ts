@@ -15,9 +15,9 @@ class Api {
         this._request = value;
     }
 
-    public async getData(): Promise<CubeResponse> {
+    public async getData(): Promise<ApiResponse<CubeResponse>> {
         let settings = structuredClone(Api.baseSettings)
-        settings.data = this._request
+        settings.data = JSON.stringify(this._request)
         return $.ajax(`${Api.baseUrl}/olap/get-cube`, settings)
     }
 
