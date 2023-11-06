@@ -1,4 +1,6 @@
 class MetricDefinition {
-    field: FieldDefinition
-    aggregationType: OlapAggregationType
+    constructor(
+        public field: FieldDefinition,
+        public aggregationType: OlapAggregationType,
+    ) { }
 }

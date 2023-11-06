@@ -1,6 +1,9 @@
 class CubeResponse {
-    columnValues: Array<Array<string>>
-    rowValues: Array<Array<string>>
-    totalColumns: bigint
-    totalRows: bigint
+    constructor(
+        public columnValues: Array<Array<string>>,
+        public rowValues: Array<Array<string>>,
+        public metricValues: Array<MetricResponse>,
+        public totalColumns: number,
+        public totalRows: number,
+    ) { }
 }

@@ -1,5 +1,7 @@
 class SortingParams {
-    order: OlapSortOrder = OlapSortOrder.Ascending
-    tuple: Array<string>
-    metricId: bigint
+    constructor(
+        public order: OlapSortOrder = OlapSortOrder.Ascending,
+        public tuple: Array<string>,
+        public metricId: number,
+    ) { }
 }

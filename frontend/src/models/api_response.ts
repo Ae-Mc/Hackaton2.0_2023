@@ -1,5 +1,7 @@
 class ApiResponse<T> {
-    success: boolean
-    message: string
-    data: T
+    constructor(
+        public success: boolean,
+        public message: string,
+        public data: T,
+    ) { }
 }

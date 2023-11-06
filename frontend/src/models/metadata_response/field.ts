@@ -1,8 +1,10 @@
 class Field {
-    id: bigint
-    ordinal: bigint
-    name: string
-    description: bigint
-    type: OlapType
-    visible: boolean
+    constructor(
+        public id: number,
+        public ordinal: number,
+        public name: string,
+        public description: number,
+        public type: OlapType,
+        public visible: boolean,
+    ) { }
 }
