@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td,
+        td {
+            border: 1px solid #000;
+            padding: 8px;
+        }
+
+        .tr {
+            display: table-row;
+        }
+
+        .td {
+            display: table-cell;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .page {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            background: lightblue;
+            /*position: relative; unneeded*/
+            display: table;
+            /* height turns to be min-height , table expands */
+            table-layout: fixed;
+            /* keeps width as set, height stills expands if needed */
+        }
+    </style>
+    <title>Таблица</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="tr">
+            <div class="td" style="width: 20%;">Заголовок</div>
+            <div class="td">Заголовок</div>
+        </div>
+        <div class="tr" style="height: 100%;">
+            <div class="td"></div>
+            <div class="td" style="background-color: green;">Проверка</div>
+        </div>
+    </div>
+    <!-- <table style="min-height: 100vh;">
+        <tr>
+            <td style="width: 20%;height: 10%;">Заголовок</td>
+            <td style="width: 80%;height: 10%;">Заголовок</td>
+        </tr>
+        <tr>
+            <td style="height: 90%"></td>
+            <td atyle="height: 90%">Проверка</td>
+        </tr>
+    </table> -->
+    <!-- <table>
+        <tr>
+            <td  style="width: 10%; height: 100%">Заголовок</td>
+            <td  style="width: 10%; height: 100%">Заголовок</td>
+            <td style="width: 80%; height: 10%">Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td>Заголовок</td>
+            <td  style="width: 80%;height: 90%">Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td>Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+        <tr>
+            <td>Заголовок</td>
+            <td> Заголовок</td>
+            <td>Заголовок</td>
+        </tr>
+    </table> -->
+
+</body>
+
+</html>
